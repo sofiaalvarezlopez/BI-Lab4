@@ -27,3 +27,12 @@ class DataModel(BaseModel):
         return ["Adult Mortality", "infant deaths", "Alcohol","percentage expenditure","Hepatitis B", "Measles", "BMI",
                 "under-five deaths", "Polio", "Total expenditure", "Diphtheria", "HIV/AIDS", "DGP", "Population",
                 "thinness 10-19 years", "thinness 5-9 years", "Income composition of resources", "Schooling"]
+
+class DataEsperada(BaseModel):
+
+# Estas varibles permiten que la librería pydantic haga el parseo entre el Json recibido y el modelo declarado.
+    Life_expectancy:float
+
+#Esta función retorna los nombres de las columnas correspondientes con el modelo esxportado en joblib.
+    def columns(self):
+        return ["Life expectancy"]
