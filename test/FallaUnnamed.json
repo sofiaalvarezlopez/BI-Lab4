@@ -1,0 +1,45 @@
+{
+  "data": [
+      { 
+        "adult_mortality": 151.0,
+        "infant_deaths": 0,
+        "alcohol": 1.8,
+        "percentage_expenditure": 423.2953509,
+        "hepatitis_B": 9.0,
+        "measles": 0,
+        "bmi": 68.6,
+        "under_five_deaths": 0.0,
+        "polio": 91.0,
+        "total_expenditure": 4.87,
+        "diphtheria": 9.0,
+        "hiv_aids": 0.1,
+        "gdp": 2284.37858,
+        "population": 146.0,
+        "thinness_10_19_years": 0.1,
+        "thinness_5_9_years": 0.1,
+        "income_composition_of_resources": 693,
+        "schooling": 14.6
+      },
+      {
+        "unnamed_0": "s",
+        "adult_mortality": 153.0,
+        "infant_deaths": 0,
+        "alcohol": 1.79,
+        "percentage_expenditure": 45.85105771,
+        "hepatitis_B": 85.0,
+        "measles": 0.0,
+        "bmi": 67.8,
+        "under_five_deaths": 0.0,
+        "polio": 91.0,
+        "total_expenditure": 5.9,
+        "diphtheria": 9.0,
+        "hiv_aids": 0.1,
+        "gdp": 229.714718,
+        "population": 99789.0,
+        "thinness_10_19_years": 0.1,
+        "thinness_5_9_years": 0.1,
+        "income_composition_of_resources": 683,
+        "schooling": 13.7
+      }
+   ]
+}
