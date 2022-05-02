@@ -1,27 +1,42 @@
-# Laboratorio 4 - Inteligencia de Negocios
+# Laboratorio 4 - Inteligencia de Negocios 
+## Sofía Álvarez, Brenda Barahona, Álvaro Plata
 
-<h3>Despliegue de Modelos ML mediante uso de API's</h3>
+<h3>1. Despliegue de Modelos ML mediante uso de API's</h3>
 
 La primera parte de este laboratorio consiste en profundizar en la construcción de pipelines para llevar modelos de machine learning a producción, en particular utilizando transformadores personalizados, como se usó en este laboratorio.
 
 Por otro lado, la segunda consiste en la creación de un API que recibe las variables predictoras en formato JSON y a partir de estas realiza una predicción la cual será devuelta al cliente en el mismo formato. El despliegue se hace tanto local como remotamente.
 
-<h4>Integrantes:</h4>
+<b>NOTA - BONOS: ¡¡¡Hicimos los bonos sugeridos!!!</b>
+
+<h3>2. Organización del proyecto</h3>
+En este repositorio, encuentra todos los archivos y entregables necesarios para este proyecto. A continuación, se describe su ubicación.
+<ul>
+  <li>Carpeta <b>Notebook</b>:</li>
   <ul>
-    <li>Sofía Álvarez - 201729031</li>
-    <li>Brenda Barahona</li>
-    <li>Álvaro Plata</li>
+      <li> Archivo <a href="https://github.com/sofiaalvarezlopez/BI-Lab4/blob/main/Notebook/Lab4-BI-Alvarez-Barahona-Plata.ipynb" target="_blank">Lab4-BI-Alvarez-Barahona-Plata.ipynb</a> con la pipeline construida para este laboratorio. </li>
+      <li> Archivo <a href="https://github.com/sofiaalvarezlopez/BI-Lab4/blob/main/Notebook/DatosTrain.csv" target="_blank">DatosTrain.csv</a> con el cual se entrenó la pipeline del proyecto. </li>
+      <li> <b>¡BONO!:</b> Archivo <a href="https://github.com/sofiaalvarezlopez/BI-Lab4/blob/main/Notebook/clases.py" target="_blank">clases.py</a> con las transformaciones customizadas que se implementaron sobre la pipeline. </li>
+  </ul>
+   <li>Carpeta <b>assets</b>:</li>
+  <ul>
+    <li> Archivo <a href="https://github.com/sofiaalvarezlopez/BI-Lab4/blob/main/assets/modelo.pkl">modelo.pkl</a>, que contiene el archivo en formato binario <code>.pickle</code>. Debido a problemas con la serialización de las clases customizadas en la pipeline, fue preferible utilizar esta librería, en lugar de <code>joblib</code>.
+  </ul>
+  <li>Carpeta <b>test</b>: Contiene todos los escenarios de prueba, decritos debidamente en el documento adjunto del <a href="https://github.com/sofiaalvarezlopez/BI-Lab4/blob/main/Informe%20lab4.docx"> informe</a>. </li>
+  <li> Archivo <code>requirements.txt</code>, que contiene todas las dependencias asociadas a la ejecución del proyecto. </li>
+  <li> Archivo <b>Informe lab4</b>, que contiene el documento del <a href="https://github.com/sofiaalvarezlopez/BI-Lab4/blob/main/Informe%20lab4.docx"> informe</a> para este laboratorio.
+    
   </ul>
   
-<h4>Instrucciones de instalación:</h4>
+<h3>3. Instrucciones de instalación:</h3>
 Para instalar este proyecto, por favor siga las instrucciones que se detallan a continuación:
   <ol>
   <li>Clonar el proyecto usando el comando <code>git clone https://github.com/sofiaalvarezlopez/BI-Lab4.git </code> .</li>
   <li>Instale las librerías y dependencias de este proyecto corriendo el comando <code>$ pip install -r requirements.txt</code>. </li>
   </ol>
   
-<h4>Despliegue del proyecto:</h4>
-El proyecto puede desplegarse de forma local o remota en AWS (bono) siguiendo las instrucciones detalladas a continuación:
+<h3>4. Despliegue del proyecto:</h3>
+El proyecto puede desplegarse de forma local o remota en AWS (<b>¡BONO!</b>) siguiendo las instrucciones detalladas a continuación:
   <ul>
     <li>
       <strong>Despliegue local:</strong>
@@ -39,7 +54,7 @@ El proyecto puede desplegarse de forma local o remota en AWS (bono) siguiendo la
     </li>
   </ul>
   
-<h4>Funcionamiento del endpoint:</h4>
+<h3>5. Funcionamiento del endpoint:</h3>
 Como se solicitaba, el API expone principalmente dos endpoints: <code>/predict</code> y <code>/r2</code>, los cuales sirven para obtener las predicciones del modelo y coeficiente de determinación R^2, respectivamente.
 * <strong>Endpoint de predicciones:</strong> Se debe enviar un JSON con los predictores X de un registro de la base de datos para obtener la predicción realizada por el modelo.</li>
 * <strong>Ejemplo de funcionamiento:</strong> En la carpeta <code>test</code> puede encontrar todos los escenarios de funcionamiento probados, los cuales están debidamente descritos en el documento adjunto a este laboratorio. No obstante, a continuación puede visualizar un ejemplo de uno de los escenarios propuestos:
