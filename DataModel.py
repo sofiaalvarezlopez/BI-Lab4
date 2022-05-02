@@ -6,7 +6,7 @@ class DataModel(BaseModel):
 
 # Estas varibles permiten que la libreria pydantic haga el parseo entre el Json recibido y el modelo declarado.
 # Tiene una correspondencia 1 a 1 con lo esperado.
-    unnamed_0: str
+    unnamed_0: int
     adult_mortality: float
     infant_deaths: float
     alcohol: float
@@ -28,7 +28,7 @@ class DataModel(BaseModel):
 
 #Esta funcion retorna los nombres de las columnas correspondientes con el modelo esxportado en joblib.
     def columns():
-        return ["Unnamed: 0","Adult Mortality", "infant deaths", "Alcohol","percentage expenditure","Hepatitis B", "Measles", "BMI",
+        return ["Unnamed: 0", "Adult Mortality", "infant deaths", "Alcohol","percentage expenditure","Hepatitis B", "Measles", "BMI",
                 "under-five deaths", "Polio", "Total expenditure", "Diphtheria", "HIV/AIDS", "GDP", "Population",
                 "thinness 10-19 years", "thinness 5-9 years", "Income composition of resources", "Schooling"]
 

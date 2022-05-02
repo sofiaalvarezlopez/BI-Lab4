@@ -8,7 +8,7 @@ import pandas as pd
 import pickle
 from DataModel import DataModel, DataModelList
 from DataModel import DataEsperadaLista
-from Dependencias_Lab4.clases import columnDropperTransformer, columnZeroToNaNTransformer, outOfRangeTransformer
+from clases import columnDropperTransformer, columnZeroToNaNTransformer, outOfRangeTransformer
 from joblib import load
 
 app = fastapi.FastAPI(title= "Laboratorio 4 BI", description="Realizado por Sofía Alvarez, Brenda Barahona, Alvaro Plata ", version="1.0.1")
