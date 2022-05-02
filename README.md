@@ -126,7 +126,7 @@ Esto significa que el primer dato (i.e. el primer país) tendrá una expectativa
   "data": {
     "data": [
       {
-        "unnamed_0": "s",
+        "unnamed_0": 3,
         "adult_mortality": 16.0,
         "infant_deaths": 11.0,
         "alcohol": 5.88,
