@@ -1,39 +1,55 @@
+# Importacion de las librerias necesarias para el modelo
+import json
+import fastapi
 from typing import Optional
-
-from fastapi import FastAPI
+from sklearn.metrics import r2_score
+from pandas import json_normalize
 import pandas as pd
-from DaraModel import DataModel
-from DaraModel import DataEsperada
+import pickle
+from DataModel import DataModel, DataModelList
+from DataModel import DataEsperadaLista
+from Dependencias_Lab4.clases import columnDropperTransformer, columnZeroToNaNTransformer, outOfRangeTransformer
 from joblib import load
 
-
-app = FastAPI(title= "Laboratorio 4 BI", description="Realizado por Sofía Alvarez, Brenda Barahona, Alvaro Plata ", version="1.0.1")
+app = fastapi.FastAPI(title= "Laboratorio 4 BI", description="Realizado por Sofía Alvarez, Brenda Barahona, Alvaro Plata ", version="1.0.1")
 
 
 @app.get("/")
-async def read_root():
+def read_root():
    return {"Hello": "World"}
 
 
 @app.get("/items/{item_id}")
-async def read_item(item_id: int, q: Optional[str] = None):
+def read_item(item_id: int, q: Optional[str] = None):
    return {"item_id": item_id, "q": q}
 
 @app.post("/predict")
-async def make_predictions(dataModel:DataModel):
-    df = pd.DataFrame(dataModel.dict(), columns=dataModel.dict().keys(), index=[0])
-    df.columns = dataModel.columns()
-    model = load("assets/modelo.joblib")
+def make_predictions(dataModel:DataModelList):
+    diccionario = fastapi.encoders.jsonable_encoder(dataModel)
+    df = json_normalize(diccionario['data']) 
+    df.columns = DataModel.columns()
+    model = load("assets/modelo.pkl")
+    print(model)
     result = model.predict(df)
-    return result
+    lista = result.tolist()
+    json_prediccion = json.dumps(lista)
+    return {"predict": json_prediccion}
 
 @app.post("/r2")
-async def get_r2(dataModel:DataModel, valoresEperados:DataEsperada):
-    df = pd.DataFrame(dataModel.dict(), columns=dataModel.dict().keys(), index=[0])
-    df.columns = dataModel.columns()
-    model = load("assets/modelo.joblib")
+def get_r2(data:DataModelList, dataEsperada:DataEsperadaLista):
+    diccionario = fastapi.encoders.jsonable_encoder(data)
+    df = json_normalize(diccionario['data']) 
+    df.columns = DataModel.columns()
+    model = load("assets/modelo.pkl")
+    print(model)
     result = model.predict(df)
-    return result
+    json = fastapi.encoders.jsonable_encoder(dataEsperada)
+    y = [float(d['Life_expectancy']) for d in json['dataEsperada']]
+    print(result)
+    print(y)
+    r2 = r2_score(y, result.tolist())
+    print("R2", r2)
+    return {"r^2": r2}
 
 #n la primera, se debe enviar un JSON con los predictores X de un registro de la base de datos para obtener 
 # la predicción realizada por el modelo. En la segunda, se debe enviar en 
