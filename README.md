@@ -43,6 +43,7 @@ El proyecto puede desplegarse de forma local o remota en AWS (bono) siguiendo la
 Como se solicitaba, el API expone principalmente dos endpoints: <code>/predict</code> y <code>/r2</code>, los cuales sirven para obtener las predicciones del modelo y coeficiente de determinación R^2, respectivamente.
 * <strong>Endpoint de predicciones:</strong> Se debe enviar un JSON con los predictores X de un registro de la base de datos para obtener la predicción realizada por el modelo.</li>
 * <strong>Ejemplo de funcionamiento:</strong> En la carpeta <code>test</code> puede encontrar todos los escenarios de funcionamiento probados, los cuales están debidamente descritos en el documento adjunto a este laboratorio. No obstante, a continuación puede visualizar un ejemplo de uno de los escenarios propuestos:
+
 ```json
 {
   "data": [
