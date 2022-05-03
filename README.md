@@ -8,6 +8,7 @@ La primera parte de este laboratorio consiste en profundizar en la construcción
 Por otro lado, la segunda consiste en la creación de un API que recibe las variables predictoras en formato JSON y a partir de estas realiza una predicción la cual será devuelta al cliente en el mismo formato. El despliegue se hace tanto local como remotamente.
 
 <b>NOTA - BONOS: ¡¡¡Hicimos los bonos sugeridos!!!</b>
+
 <b>NOTA 2: Todos los participantes del equipo trabajaron conjuntamente </b>
 
 <h3>2. Organización del proyecto</h3>
