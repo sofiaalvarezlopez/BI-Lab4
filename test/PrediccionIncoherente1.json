@@ -6,20 +6,20 @@
         "infant_deaths": 1100,
         "alcohol": 35.88,
         "percentage_expenditure": 947.210141,
-        "hepatitis_B": 0,
+        "hepatitis_B": 9.0,
         "measles": 0,
-        "bmi": 98.8,
+        "bmi": 68.6,
         "under_five_deaths": 12,
         "polio": 99.0,
         "total_expenditure": 4.11,
         "diphtheria": 99.0,
         "hiv_aids": 0.3,
-        "gdp": 4212.549200,
+        "gdp": 2284.549200,
         "population": 600.0,
         "thinness_10_19_years": 100,
         "thinness_5_9_years": 100,
-        "income_composition_of_resources": 0.706,
-        "schooling": 0
+        "income_composition_of_resources": 693,
+        "schooling": 14.6
       }
    ]
 }
