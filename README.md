@@ -9,6 +9,8 @@ Por otro lado, la segunda consiste en la creación de un API que recibe las vari
 
 <b>NOTA - BONOS: ¡¡¡Hicimos los bonos sugeridos!!!</b>
 
+<b>NOTA 2: Todos los participantes del equipo trabajaron conjuntamente. </b>
+
 <h3>2. Organización del proyecto</h3>
 En este repositorio, encuentra todos los archivos y entregables necesarios para este proyecto. A continuación, se describe su ubicación.
 <ul>
